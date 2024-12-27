@@ -1,0 +1,16 @@
+Write SOQL Queries(5) from (module-Apex Basics & Database)
+
+-------------------------------------------------
+The Apex class must be called ContactAndLeadSearch and be in the public scope :
+
+SOURCE CODE:
+public class ContactAndLeadSearch {
+  
+    public static list<list< sObject >> searchContactsAndLeads(String lastName){
+     
+        list<list< sObject >> ContactLeadList = [ Find : lastName IN ALL FIELDS
+                                                 RETURNING contact(name),
+                                                 lead (Name) ];
+      return ContactLeadList;
+  }   
+}

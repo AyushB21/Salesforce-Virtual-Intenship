@@ -1,0 +1,13 @@
+Use Simple Variables and Formulas from (module - Visualforce Basics)
+
+-------------------------------------------------
+SOURCE CODE: DisplayUserInfo(Visualforce page)
+
+
+<apex:page>
+    <apex:pageBlock title="User Status">
+        <apex:pageBlockSection columns="1">
+            {! $User.FirstName }
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

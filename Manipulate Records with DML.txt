@@ -1,0 +1,31 @@
+Manipulate Records with DML from (module-Apex Basics & Database)
+
+
+-------------------------------------------------
+The Apex class must be called AccountHandler and be in the public scope :
+
+SOURCE CODE:
+public class AccountHandler { 
+    public static Account insertNewAccount(String AccountName){
+        Account acct = new Account(Name=AccountName);   
+        try{
+            insert acct;
+        }
+        catch(DMLException e){
+            return Null;
+        }
+        return acct;
+    }
+}
+
+-------------------------------------------------
+
+The Apex class must have a public static method called insertNewAccount :
+
+
+SOURCE CODE 1:
+AccountHandler.insertNewAccount('new test account');
+
+
+SOURCE CODE 2:
+AccountHandler.insertNewAccount('');

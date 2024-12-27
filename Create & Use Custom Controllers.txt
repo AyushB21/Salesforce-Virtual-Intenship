@@ -1,0 +1,23 @@
+Create & Use Custom Controllers from (module - Visualforce Basics)
+
+-------------------------------------------------
+SOURCE CODE: NewCaseList (Visualforce page)
+
+<apex:page controller="NewCaseListController" >
+    <apex:repeat var="case" value="{!newCases}">
+        <apex:outputLink>value"/{!case.ID}">
+            <apex:outputText value="{!case.CaseNumber}"></apex:outputText>
+        </apex:outputLink>
+    </apex:repeat>
+</apex:page>
+
+ 
+-------------------------------------------------
+SOURCE CODE : NewCaseListController (Apex Class)
+
+public class NewCaseListController {
+    public list<Case > getNewCases (){
+        list<case> filterlist =[Select Id,caseNumber from case where status ='New'];
+        return filterlist;
+    }}
+

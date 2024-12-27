@@ -1,0 +1,17 @@
+Write SOQL Queries(4) from (module-Apex Basics & Database)
+
+
+-------------------------------------------------
+The Apex class must be called ContactSearch and be in the public scope :
+
+
+SOURCE CODE:
+public class ContactSearch {
+    public static List<Contact> searchForContacts(String lastName, String maillingpostalCode){
+        List<Contact> contactList = [Select Id,Name from Contact where
+                                  LastName =: lastName and 
+                                  MailingPostalCode =: maillingpostalCode];
+        return contactList;
+    }
+
+}
